@@ -1,0 +1,32 @@
+.btn-outline-red{
+    color: #CF4332;
+    border-color: #CF4332;
+}
+.row{
+    margin: 0px;
+}
+.col{
+    padding: 0px;
+}
+main{
+    background-color: rgb(248, 249, 250);
+}
+.btn-outline-red:hover{
+    color: white !important;
+    background-color: red !important;
+}
+.btn {
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.btn-social-icon {
+    position: absolute;
+    left: 4rem;
+    width: 2rem;
+}
+.btn-secondary{
+    color: #fff;
+    background-color: #3d348b;
+    border-color: #3d348b;
+}

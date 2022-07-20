@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %> | Sign in</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="./assets/users/signin" rel="stylesheet">
+    <link href="./assets/users/header" rel="stylesheet">
+    <link href="./assets/users/footer" rel="stylesheet">
+
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+<%= render 'users/header'%>
+<body class="d-flex flex-column h-100">
+    <main style="padding-top: 63px;">
+        <div class="container-fluid px-3 login">
+            <div class="row win-vh-100">
+                <div class="col-md-8 col-lg-6 col-xl-5 d-flex align-items-center">
+                    <div class="w-100 py-5 px-md-5 px-xl-6 position-relative">
+                    <%= form_for :session, url: signin_path do |f| %>
+                        <div class="mb-4">
+                            <h3 class="orange-text" style="color: orange;">SPORTA</h3>
+                            <h4 class="d-none d-md-block">Xin chào bạn</h4>
+                            <a href="" type="button" class="btn btn-outline-primary btn-block btn-social mb-3">
+                                <i class="fa-2x fa fa-facebook-f  btn-social-icon"></i>
+                                Đăng nhập với Facebook
+                            </a>
+                            <a href="" type="button" class="btn btn-outline-red btn-block btn-social mb-3">
+                                <i class="fa-2x fa fa-google  btn-social-icon"></i>
+                                Đăng nhập với Google
+                            </a>
+                            <hr data-content="Hoặc" class="my-3 hr-text letter-spacing-2">
+                            <div class="form-group">
+                                <%= f.label :name, 'Tên đăng nhập', class: 'form-label'%>
+                                <%= f.text_field :name, class: 'form-control'%>
+                            </div>
+                            <div class="form-group mb-2">
+                                <%= f.label :password, class: 'form-label'%>
+                                <%= f.password_field :password , class: 'form-control'%>
+                            </div>
+                            <%= f.submit :'Đăng nhập', class: "btn btn-block btn-secondary"%>
+                            <div class="mt-1 row">
+                                <div class="col-6">
+                                    <%= link_to "Quên mật khẩu?", repassword_path, class: " form-text" %>
+                                </div>
+                                <div class="col-6">
+                                    <%= link_to "Đăng ký", signup_path, class: "float-right form-text" %>
+                                </div>
+                            </div>
+                            <!-- </form> -->
+                        </div>
+                        <%end%>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-6 col-xl-7 d-none d-md-block">
+                    <div class="overlay pt-5 mt-5 pb-5">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                              <img src="../../assets/users/homepage.jpg" alt="Los Angeles" width="100%" height="500">
+                              <div class="carousel-caption">
+                                <h1 style="color: rgb(252, 7, 7); margin-bottom: 80px; font-size: 50px;">WELCOME TO SPORTA</h1>
+                                <h2 style="margin-bottom: 100px; color: yellow;">
+                                  HINATA SHOUYOU
+                                </h2>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <%= debug(params) if Rails.env.development? %>
+    </main>
+</body>
+<%= render 'users/footer'%>
