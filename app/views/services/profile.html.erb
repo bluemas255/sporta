@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %> | Sporta</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="./assets/users/profile" rel="stylesheet">
+    <link href="./assets/users/header" rel="stylesheet">
+    <link href="./assets/users/footer" rel="stylesheet">
+
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+<%= render 'users/header'%>
+
+<main style="padding-top: 63px; background-color: ghostwhite;">
+    <div class="container-fluid container-lg pt-3 pb-3 border-bottom px-lg-5">
+        <div class="row justify-content-md-center mt-3 minimum-heigh ">
+            <div class="col-md-4 col-lg-3 pr-0 bg-white justify-content-center">
+                <div class=" user-sidebar sidebar-md ">
+                    <ul class="navbar-nav " aria-labelledby="">
+                        <li class="nav-item">
+                            <div class="user-brief ">
+                                <div class="d-flex flex-column align-self-center user-brief_right m-md-1">
+                                    <div class="text-muted text-sm d-none d-md-flex ">
+                                        <a href="profile" class="text-decoration-none" style="color: black !important;">
+                                            <i class="fa fa-edit"></i>
+                                            Sửa hồ sơ
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <div class="row ">
+                            <div class="m-2 col-lg-7 col-7 menu-items">
+                                <li class="mb-1" style="color: #93a3b5 !important;">
+                                    <i class="fa fa-user-circle">
+                                        <%= link_to "Thông tin tài khoản", profile_path,style: "color: #93a3b5 !important;" %>
+                                    </i>
+                                </li>
+                                <li class="mb-1" style="color: #93a3b5 !important;">
+                                    <i class="fa fa-clock-o">
+                                        <%= link_to 'Lịch của tôi', timeline_path, style: "color: #93a3b5 !important;" %>
+                                    </i>
+                                </li>
+                                <li class="mb-1" style="color: #93a3b5 !important;">
+                                    <i class="fa fa-unlock-alt">
+                                        <%= link_to "Đổi mật khẩu", repassword_path, style: "color: #93a3b5 !important;" %>
+                                    </i>
+                                </li>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-8 col-lg-9 pl-3 pr-3">
+                <div class="user-page-content">
+                    <section class="border-light">
+                        <div class="row justify-content-center m-2">
+                            <h5 class="w-100 text-center d-none d-md-block">Thông tin tài khoản</h5>
+                        </div>
+                        <div class="row justify-content-center m-2">
+                            <div class="col-md-3">
+                                <header class="profile-picture"></header>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="d-flex justify-content-center">
+                                    <div class="w-75">
+                                        <div class="form-row">
+                                            <div class="col-md-6 form-group">
+                                                <label>CLUB</label>
+                                                <input class="form-control" type="text" >
+                                            </div>
+                                            <div class="col-md-6 form-group">
+                                                <label for="user_name">Số tiền: {{money}}</label>
+                                                <!-- <input class="form-control" placeholder="Họ Tên" type="text"
+                                                    name="user[name]" id="user_name"> -->
+                                                <br>
+                                                <label for="user_name">PointRank: {{pointRank}}</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Số điện thoại</label>
+                                            <input class="form-control" type="text" placeholder="Số điện thoại">
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-12 form-group">
+                                                <label for="user_date_of_birth">Email</label>
+                                                <input class="form-control" type="email">
+                                            </div>
+                                        </div>
+                                        <button name="button" class="btn btn-primary">
+                                            Cập nhật
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<%= render 'users/footer'%>

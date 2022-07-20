@@ -1,5 +1,6 @@
 class Time < ApplicationRecord
-  has_one :match
 
   validates :value
+
+  has_one :match
 end

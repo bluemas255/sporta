@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %> | Sporta</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="./assets/users/homepage" rel="stylesheet">
+    <link href="./assets/users/header" rel="stylesheet">
+    <link href="./assets/users/footer" rel="stylesheet">
+
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+<%= render 'users/header' %>
+<main>
+  <div id="demo" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../../assets/users/homepage.jpg" alt="Los Angeles" width="100%" height="500">
+        <div class="carousel-caption">
+          <h1 style="color: rgb(252, 7, 7); margin-bottom: 30px; font-size: 50px;">WELCOME TO SPORTA</h1>
+          <h2 style="margin-bottom: 150px; color: yellow;">
+            HINATA SHOUYOU
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-5 mb-5">
+    <div class="d-flex justify-content-center row">
+      <div class=" col-md-4 d-md-block">
+        <p style="padding-top: 8px;">Địa chỉ: So 30, Tran Huu Duc, Nam Tu Liem, Ha Noi</p>
+        <p>Điện thoại: 0984372080</p>
+        <p>Giờ mở cửa: 06:00 - 24:00</p>
+        <div class="image Rbx14">
+          <div class="float-left w-50 h-100">
+            <img src="../../assets/users/anh1.jpg" class="h-100 w-100" alt="">
+          </div>
+          <div class="float-right w-50 h-100">
+            <div>
+              <img src="../../assets/users/anh2.jpg" class="h-50 w-50" alt="">
+              <img src="../../assets/users/anh3.jpg" class="h-50 w-50" alt="">
+            </div>
+            <div>
+              <img src="../../assets/users/anh4.jpg" class="h-50 w-50" alt="">
+              <img src="../../assets/users/anh5.jpg" class="h-50 w-50" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex flex-column col-md-8">
+        <div class="d-flex flex-row align-items-center text-left comment-top p-2 bg-white border-bottom px-4">
+          <h3>ĐÁNH GIÁ CỦA KHÁCH HÀNG</h3>
+        </div>
+        <div class="coment-bottom bg-white">
+          <div class="d-flex flex-row add-comment-section mt-4 mb-4">
+            <div class="rating">
+              <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+              <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+              <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+              <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+              <input type="radio" name="rating" value="1" id="1" checked><label for="1">☆</label>
+            </div>
+            <input type="text" id="comment-content" class="form-control mr-3" placeholder="Add comment">
+            <button class="btn btn-primary" type="button" >Comment</button>
+          </div>
+          <div class="commented-section mt-2" style="margin-bottom: 20px;" *ngFor="let item of listComment">
+            <div class="d-flex flex-row align-items-center commented-user">
+              <h5 class="mr-2">{{nameTeam']}}</h5>
+              <div class="rating">
+                <input type="radio" [checked]="item.star>4"><label>☆</label>
+                <input type="radio" [checked]="item.star>3"><label>☆</label>
+                <input type="radio" [checked]="item.star>2"><label>☆</label>
+                <input type="radio" [checked]="item.star>1"><label>☆</label>
+                <input type="radio" [checked]="item.star>0"><label>☆</label>
+              </div>
+            </div>
+            <div class="comment-text-sm"><span>{{content}}</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<%= render 'users/footer'%>
+

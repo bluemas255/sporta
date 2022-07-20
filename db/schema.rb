@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_05_103200) do
+ActiveRecord::Schema.define(version: 2022_07_19_075904) do
 
   create_table "matches", force: :cascade do |t|
     t.integer "home_team_id"
@@ -60,12 +60,14 @@ ActiveRecord::Schema.define(version: 2022_07_05_103200) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "password"
-    t.string "phone"
+    t.integer "role"
+    t.float "phone"
     t.string "name_team"
     t.integer "point_rank"
     t.float "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
   end
 
 end

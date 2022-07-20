@@ -1,10 +1,11 @@
 class User < ApplicationRecord
-  validates :name, persence: true, length: { maximum: 20}
-  validates :phone, persence: true, length: { maximum: 20}
-  validates :password, presence: true, length: {is: 8}
-  validates :name_team, persence: true, length: { maximum: 20}
+
+  validates :name, presence: true, uniqueness: true
+  validates :phone, presence: true
+  validates :password, presence: true, length: { minimum: 6 }, if: :password
+  has_secure_password
 
   has_many :match
   has_one :team
-
+  has_one :service
 end

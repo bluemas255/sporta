@@ -1,0 +1,32 @@
+main{
+    background-color: rgb(248, 249, 250);
+}
+.btn-outline-red{
+    color: #CF4332;
+    border-color: #CF4332;
+}
+.btn-outline-orange {
+    color: orange;
+    border-color: orange;
+}
+.btn-outline-orange:hover{
+    color: white !important;
+    background-color: orange !important;
+}
+.btn-outline-red:hover{
+    color: white !important;
+    background-color: red !important;
+}
+.btn {
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.btn-social-icon {
+    position: absolute;
+    left: 2rem;
+    width: 2rem;
+}
+.orange-text {
+    color: orange !important;
+}
